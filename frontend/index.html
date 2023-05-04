@@ -15,19 +15,27 @@
         <h1>Portfólió</h1>
     </header>
     <main>
+        <div id="bg">
         <table class="table table-striped-columns" >  
             <thead>
-                <h2>Projectek:</h2>
+                <h2>Projectek:</h2><hr>
             </thead>
             <tbody id="tabla">
                 <tr>
-                <td><h3>Project Neve</h3></td>
-                <td><h3>Programozási nyelvek</h3></td>
-                <td><h3>Link</h3></td>
+                <td><h5>Project Neve</h5></td>
+                <td><div class="dropdown">
+                    <button class="dropbtn" id="nobtn"><h5>Programozási nyelvek</h5></button>
+                    <div class="dropdown-content">
+                      <button onclick="apitolt()">Mind</button>
+                    </div>
+                  </div>
+                  </td>
+                <td><h5>Link</h5></td>
                 </tr>
                 
             </tbody>
         </table>
-    <main>
+    </div>
+    </main>
 </body>
 </html>
