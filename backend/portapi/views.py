@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+from .models import Languages, Project
 
 
 def getCommands(request):
@@ -7,3 +8,11 @@ def getCommands(request):
     } 
 
     return JsonResponse(endpoints)
+
+def getProjects(request):
+    projects=Project.objects.all()
+    serialized_projects=[]
+    for project in projects:
+        serialized_projects.append(project.serializer())
+    
+    return JsonResponse(serialized_projects, safe=False)

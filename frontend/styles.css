@@ -1,0 +1,32 @@
+header{
+    width: 95%;
+    height: 10em;
+    background-color: aqua;
+    margin:auto;
+    margin-bottom: 5px;
+
+}
+main{
+    width: 90%;
+    
+    margin:auto;
+    margin-top:5px;
+    background-color: crimson;
+    
+}
+h1{
+    text-align: center;
+}
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    margin:auto;    
+}
+td{
+    text-align: center;
+}
+thead{
+    text-align: left;
+}
