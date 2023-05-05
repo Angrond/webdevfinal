@@ -52,15 +52,6 @@ td{
 h5{
     font-weight: 900;
 }
-td:first-child { 
-    width: 40%; 
-}
-td:second-child { 
-    width: 20%; 
-}
-td:third-child { 
-    width: 40%; 
-}
 
 thead{
     text-align: left;
