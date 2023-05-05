@@ -37,12 +37,11 @@ function apitolt()
         };    
     })
 }
-function feltolt()
+function nyelvgombok()
 {
     objnyelvek ={
         nyelvek : [],
     }
-    apitolt();
     fetch("http://127.0.0.1:8000/api/languages/")
     .then(data => data.json())
     .then(adat => {
@@ -53,17 +52,28 @@ function feltolt()
         for(let i=0; i<objnyelvek.nyelvek.length; i++)
         {
             
-            document.getElementById("ddm").innerHTML+="<button onclick='keres("+objnyelvek.nyelvek[i].name+")'>"+objnyelvek.nyelvek[i].name+"</button>"
+            document.getElementById("ddm").innerHTML+="<button onclick='keres(&apos;"+objnyelvek.nyelvek[i].name+"&apos;)'>"+objnyelvek.nyelvek[i].name+"</button>"
         };    
         
     })
 }
+function feltolt()
+{
+    apitolt();
+    nyelvgombok();
+}
 function keres(nyelv){
-sajat_obj.project.forEach(element => {
-    if (element.languages.Includes(nyelv)) {
-        
+    tabla();
+    for (let i = 0; i < sajat_obj.project.length; i++) {
+        for (let j = 0; j < sajat_obj.project[i].languages.length; j++) {
+            if (sajat_obj.project[i].languages[j].name.includes(nyelv)) {
+            var a=""
+            a=nyelvek(i);
+            document.getElementById("tabla").innerHTML+="<tr id='sor'><td onclick='description("+i+")' >"+sajat_obj.project[i].name+"</td><td onclick='description("+i+")'>"+a+"</td><td><a href='"+sajat_obj.project[i].link+"' target='blank_'>Nézd meg</a></td></tr>";
+            }
+        } 
     }
-});
+    nyelvgombok();
 }
 function description(id){
     if (id==lastid) {
