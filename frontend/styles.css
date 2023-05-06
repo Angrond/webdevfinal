@@ -46,9 +46,6 @@ table{
     margin:auto;
     font-weight: bold;
 }
-#bg{    
-    opacity: 1; 
-}
 #nobtn{
     background: none;
     border: none;
